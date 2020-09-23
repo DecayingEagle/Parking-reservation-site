@@ -33,6 +33,7 @@ const parking_Spot_A_cords = ["245,78,290,146"
 ,"694,331,740,398"];
 
 var parkingSelected;
+var parkingslotPick;
 
 var map1 = document.getElementById("parkingA");
 //var map2 = document.getElementById(parkingB);
@@ -54,115 +55,16 @@ function eventHandler(e) {
   for (let i = 0; i < parking_Spot_A_cords.length; i++) {
     if (clicked == parking_Spot_A_cords[i]) {
       parkingSelected = i;
+      break;
     }
   }
 
-  switch (parkingSelected) {
-    case 0:
-      console.log("EL1")
-      break;
-    case 1:
-      console.log("EL2")
-      break;
-    case 2:
-      console.log("A1")
-      break;
-    case 3:
-      console.log("A2")
-      break;
-    case 4:
-      console.log("A3")
-      break;
-    case 5:
-      console.log("A4")
-      break;
-    case 6:
-      console.log("A5")
-      break;
-    case 7:
-      console.log("A6")
-      break;
-    case 8:
-      console.log("A7")
-      break;
-    case 9:
-      console.log("A8")
-      break;
-    case 10:
-      console.log("A9")
-      break;
-    case 11:
-      console.log("A10")
-      break;
-    case 12:
-      console.log("A11")
-      break;
-    case 13:
-      console.log("A12")
-      break;
-    case 14:
-      console.log("A13")
-      break;
-    case 15:
-      console.log("A14")
-      break;
-    case 16:
-      console.log("A15")
-      break;
-    case 17:
-      console.log("A16")
-      break;
-    case 18:
-      console.log("A17")
-      break;
-    case 19:
-      console.log("A18")
-      break;
-    case 20:
-      console.log("A19")
-      break;
-    case 21:
-      console.log("A20")
-      break;
-    case 22:
-      console.log("A21")
-      break;
-    case 23:
-      console.log("A22")
-      break;
-    case 24:
-      console.log("A23")
-      break;
-    case 25:
-      console.log("A24")
-      break;
-    case 26:
-      console.log("A25")
-      break;
-    case 27:
-      console.log("A26")
-      break;
-    case 28:
-      console.log("A27")
-      break;
-    case 29:
-      console.log("A28")
-      break;
-    case 30:
-      console.log("A29")
-      break;
-    case 31:
-      console.log("A30")
-      break;
-    case 32:
-      console.log("A31")
-      break;
-
-    default:
-      console.warn("no element found?!?")
-      break;
+  if (parkingSelected == 0 || parkingSelected == 1) {
+    console.log("EL" + (parkingSelected + 1));
+    parkingslotPick = "EL" + (parkingSelected + 1);
+  } else{
+    console.log("A" + (parkingSelected - 1));
+    parkingslotPick = "A" + (parkingSelected - 1);
   }
   e.stopPropagation();
 }
-
-
